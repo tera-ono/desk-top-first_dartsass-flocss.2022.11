@@ -1,0 +1,24 @@
+@use "global" as *;
+/* --- sp, pc時の表示・非表示（主にbrタグ） --- */
+
+.u-sp-only {
+  // スマホのみ表示
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.u-pc-only {
+  // タブレット以上表示
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.u-lg-pc-only {
+  // 多いサイズのPc時に表示
+  @include mq("lg") {
+    display: none;
+  }
+}

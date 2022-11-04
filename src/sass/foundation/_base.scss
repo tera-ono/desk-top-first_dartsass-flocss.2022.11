@@ -1,0 +1,43 @@
+/* リキッドレイアウト対応 */
+@use "global" as *;
+
+html {
+  // max-screen~inner
+  font-size: 16px;
+
+  //inner~max-screen
+  @media (max-width: calc($inner - 1px) ) {
+    font-size: vw(strip-unit($inner), 16);
+  }
+
+  //787px~375px
+  @include mq("md") {
+    font-size: 16px;
+  }
+
+  //374~px
+  @media (max-width: 374px) {
+    font-size: vw(375, 16);
+  }
+}
+
+/* pcの電話番号発信対応 */
+a[href^="tel:"] {
+  @include mq("md") {
+    pointer-events: none;
+  }
+}
+
+/* ホバー */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity $transition-duration linear;
+  @media (any-hover: hover) {
+    &:hover,
+    &:focus {
+      opacity: $opacity;
+      transition: opacity $transition-duration linear;
+    }
+  }
+}
