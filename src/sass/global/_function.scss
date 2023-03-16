@@ -13,3 +13,19 @@
 @function vw($window_width, $size) {
 	@return math.div($size, $window_width) * 100vw;
 }
+
+// ================================================================
+// pxをvwに変換する関数 
+// ================================================================
+// ----------------------------------------------------------------
+// 
+// @param $px ピクセル値
+// @param $design-width デザイン幅（アートボード幅）
+// @return pxをvwに変換した値
+// ----------------------------------------------------------------
+@function toVw($px, $design-width: 1440) {
+  @return calc(100 / $design-width) * $px * 1vw;
+}
+@function toVwSp($px, $design-width: 375) {
+  @return calc(100 / $design-width) * $px * 1vw;
+}

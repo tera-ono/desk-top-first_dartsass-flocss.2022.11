@@ -1,4 +1,12 @@
 @use "global" as *;
 .p-big {
-  font-size: rem(100);
+  // font-size: rem(100);
+  font-size: min(toVw(30), 30px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: red;
+  @include mq("md") {
+    font-size: min(toVwSp(16), 16px);
+  }
 }

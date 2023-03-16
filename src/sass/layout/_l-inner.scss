@@ -9,7 +9,7 @@
   margin-right: auto;
   margin-left: auto;
   @include mq("md") {
-    max-width: rem(540); //状況によって変える必要があるかも
+    max-width: 540px; //状況によって変える必要があるかも
     padding-right: $padding-sp;
     padding-left: $padding-sp;
   }

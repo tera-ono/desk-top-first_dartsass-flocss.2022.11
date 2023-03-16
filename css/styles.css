@@ -8,9 +8,7 @@ body.is-open {
 
 /* リキッドレイアウト対応 */
 
-html {
-	font-size: 16px;
-}
+/* ---可変不可の場合はhtmlに対してのフォント設定をコメントアウトする事  --- */
 
 /* pcの電話番号発信対応 */
 
@@ -145,6 +143,8 @@ select::-ms-expand {
 
 .l-inner {
 	max-width: 1095px;
+	width: 100%;
+	height: inherit;
 	padding-right: 40px;
 	padding-left: 40px;
 	margin-right: auto;
@@ -256,31 +256,28 @@ select::-ms-expand {
 }
 
 .p-big {
-	font-size: 100px;
-	font-size: 6.25rem;
+	font-size: min(2.0833333333vw, 30px);
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0.1em;
+	color: red;
 }
 
-/* --- タブレットサイズでブロックになり改行する --- */
+/* --- タブレット小サイズ以下でブロックになり改行する --- */
+
+.u-block-sm-tab {
+	display: inline;
+}
+
+/* --- タブレットサイズ以下でブロックになり改行する --- */
 
 .u-block-tab {
 	display: inline;
 }
 
-/* --- タブレット小サイズでブロックになり改行する --- */
+/* --- タブレットサイズ大以下でブロックになり改行する --- */
 
-.u-inline-sm-tab {
-	display: inline;
-}
-
-/* --- タブレットサイズでブロックになり改行する --- */
-
-.u-block-tab {
-	display: inline;
-}
-
-/* --- タブレットサイズ大でブロックになり改行する --- */
-
-.u-inline-tab-large {
+.u-block-tab-large {
 	display: inline;
 }
 
@@ -295,8 +292,6 @@ select::-ms-expand {
 .u-sp-only {
 	display: none;
 }
-
-/* --- スマホ時は非表示でタブレット以上だと表示される --- */
 
 /* --- 外部ライブラリを上書きする用のファイルが入っているフォルダ --- */
 
@@ -321,7 +316,7 @@ a:focus {
 
 @media screen and (max-width: 1023px) {
 
-.u-inline-tab-large {
+.u-block-tab-large {
 	display: block;
 }
 
@@ -331,28 +326,14 @@ a:focus {
 
 }
 
-@media (max-width: 1014px) {
-
-html {
-	font-size: 1.5763546798vw;
-}
-
-}
-
 @media screen and (max-width: 767px) {
-
-html {
-	font-size: 16px;
-}
 
 a[href^="tel:"] {
 	pointer-events: none;
 }
 
 .l-inner {
-	max-width: 33.75rem;
-	width: 100%;
-	height: inherit;
+	max-width: 540px;
 	padding-right: 20px;
 	padding-left: 20px;
 }
@@ -413,8 +394,8 @@ a[href^="tel:"] {
 	margin-top: 2rem;
 }
 
-.u-block-tab {
-	display: block;
+.p-big {
+	font-size: min(4.2666666667vw, 16px);
 }
 
 .u-block-tab {
@@ -429,23 +410,11 @@ a[href^="tel:"] {
 	display: none;
 }
 
-.u-show-tab {
-	display: none;
-}
-
-}
-
-@media (max-width: 374px) {
-
-html {
-	font-size: 4.2666666667vw;
-}
-
 }
 
 @media screen and (max-width: 374px) {
 
-.u-inline-sm-tab {
+.u-block-sm-tab {
 	display: block;
 }
 
